@@ -36,10 +36,10 @@ footer {
     padding: 1.5em;
 }
 img {
-    width: 20rem;
-    border-radius: 2rem;
+    width: 20em;
+    border-radius: 2em;
 
-    margin: 2rem 0;
+    margin: 2em 0;
 }
 .header-title {
     margin: 0;
@@ -54,5 +54,14 @@ img {
     color: white;
     text-decoration: none;
 
-    margin: 0 1rem;
+    margin: 0 1em;
+}
+.contacts-block {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 2em;
+}
+.contacts-block img {
+    max-width: 4em;
 }
