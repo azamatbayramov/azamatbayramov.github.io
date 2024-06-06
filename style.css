@@ -1,0 +1,42 @@
+body {
+    font-family: 'JetBrains Mono Light';
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+header {
+    background-color: #222222;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space;
+    width: 100%;
+    height: 20vh;
+    padding: 0 5vw;
+}
+main {
+    padding: 0 5vw;
+}
+img {
+    width: 30%;
+    border-radius: 50%;
+}
+.fig {
+    text-align: center;
+    padding-top: 3vh;
+}
+.header-title {
+    font-size: 2em;
+}
+.header-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    margin: 0 3vh;
+}
+.header-menu-link {
+    color: white;
+    text-decoration: none;
+}
