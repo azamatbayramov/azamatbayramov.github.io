@@ -20,9 +20,8 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    text-align: center;
 
-    padding: 2em;
+    padding: 2em 3em;
 }
 
 .header-title {
@@ -32,12 +31,13 @@ header {
 
 .header-menu {
     display: flex;
+
+    gap: 4em;
 }
 
 .header-menu-link {
     color: var(--color4);
     text-decoration: none;
-    margin: 0 1em;
     font-size: 1.2em;
     transition: color 0.5s;
 }
