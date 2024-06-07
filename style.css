@@ -1,5 +1,9 @@
+@font-face {
+    font-family: JetBrains Mono;
+    src: url(fonts/JetBrainsMono-Regular.ttf);
+}
 body {
-    font-family: 'JetBrains Mono Light';
+    font-family: 'JetBrains Mono';
 
     margin: 0;
     padding: 0;
