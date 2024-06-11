@@ -70,12 +70,7 @@ main {
     gap: 0.3em;
 }
 
-.profile-title h1 {
-    margin: 0;
-}
-
-.profile-title p {
-    font-size: 1.3em;
+.profile-title * {
     margin: 0;
 }
 
