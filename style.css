@@ -24,21 +24,18 @@ header {
     padding: 0 10%;
 }
 
-
-.header-menu {
+nav {
     display: flex;
-
     gap: 4em;
 }
 
-.header-menu-link {
+nav a {
     color: var(--color4);
     text-decoration: none;
-    font-size: 1.2em;
     transition: color 0.5s;
 }
 
-.header-menu-link:hover {
+nav a:hover {
     color: var(--color3);
 }
 
