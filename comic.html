@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Joke</title>
+        <link rel="stylesheet" href="comic.css">
+    </head>
+
+    <body>
+        <h1 id="jokeTitle"></h1>
+        <p id="jokeDate"></p>
+        <img id="jokeImage">
+        
+        <script>
+            const email = "a.bayramov@innopolis.university"
+            const fetchJokeIdUrl = "https://fwd.innopolis.university/api/hw2?"
+            const fetchJokeUrl = "https://fwd.innopolis.university/api/comic?"
+
+            const jokeTitle = document.getElementById('jokeTitle');
+            const jokeDate = document.getElementById('jokeDate');
+            const jokeImage = document.getElementById('jokeImage');
+
+            function fetchJokeId(email) {
+                const params = new URLSearchParams({"email": email});
+                return fetch(fetchJokeIdUrl + params.toString()).then(r => r.json());
+            }
+
+            function fetchJoke(id) {
+                const params = new URLSearchParams({"id": id});
+                return fetch(fetchJokeUrl + params.toString()).then(r => r.json());
+            }
+
+            function showJoke(joke) {
+                jokeTitle.innerText = joke.safe_title;
+
+                date = new Date(joke.year, joke.month, joke.day);
+                jokeDate.innerText = date.toLocaleDateString();
+
+                jokeImage.src = joke.img;
+                jokeImage.alt = joke.transcript;
+            }
+            
+            async function main() {
+                id = await fetchJokeId(email);
+                joke = await fetchJoke(id);
+                console.log(joke);
+                showJoke(joke);
+            }
+
+            main();
+        </script>
+    </body>
+
+</html>
