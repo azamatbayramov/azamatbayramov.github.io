@@ -25,9 +25,9 @@ jobs:
       run: npm run build
     
     - name: Artifact the build
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: 'build/'
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: 'build/'
 
   deploy:
     name: Deploy
