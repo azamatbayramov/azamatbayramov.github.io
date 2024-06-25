@@ -24,6 +24,14 @@ jobs:
     - name: Build the project
       run: npm run build
     
+    - name: Copy additional files to dist
+      run: |
+        cp index.html dist/
+        cp style.css dist/
+        cp comic.html dist/
+        cp comic.css dist/
+        # Добавьте другие файлы, которые нужно скопировать
+    
     - name: Artifact the build
       uses: actions/upload-pages-artifact@v3
       with:
