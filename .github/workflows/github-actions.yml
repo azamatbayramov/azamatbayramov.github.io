@@ -27,7 +27,7 @@ jobs:
     - name: Artifact the build
       uses: actions/upload-pages-artifact@v3
       with:
-        path: 'build/'
+        path: 'dist/'
 
   deploy:
     name: Deploy
