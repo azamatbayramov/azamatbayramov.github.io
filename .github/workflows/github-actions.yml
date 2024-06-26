@@ -26,11 +26,8 @@ jobs:
     
     - name: Copy additional files to dist
       run: |
-        cp index.html dist/
-        cp style.css dist/
-        cp comic.html dist/
-        cp comic.css dist/
-        # Добавьте другие файлы, которые нужно скопировать
+        cp -a src/. /dist/
+        cp -a img/. /dist/
     
     - name: Artifact the build
       uses: actions/upload-pages-artifact@v3
