@@ -27,7 +27,7 @@ jobs:
     - name: Copy additional files to dist
       run: |
         cp -a src/. dist/
-        cp -a img/. dist/
+        cp -a img/ dist/
     
     - name: Artifact the build
       uses: actions/upload-pages-artifact@v3
