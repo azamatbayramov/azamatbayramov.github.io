@@ -23,6 +23,7 @@ interface JokeDTO {
     day: string;
 }
 
+// Fetch joke ID based on the email provided
 async function fetchJokeId(email: string): Promise<string> {
     const params = new URLSearchParams({ email });
     const response = await fetch(`${fetchJokeIdUrl}${params.toString()}`);
@@ -35,6 +36,7 @@ async function fetchJokeId(email: string): Promise<string> {
     return jokeId;
 }
 
+// Fetch joke details using the joke ID
 async function fetchJoke(id: string): Promise<JokeDTO> {
     const params = new URLSearchParams({ id });
     const response = await fetch(`${fetchJokeUrl}${params.toString()}`);
@@ -47,6 +49,7 @@ async function fetchJoke(id: string): Promise<JokeDTO> {
     return joke;
 }
 
+// Display the joke on the web page
 function showJoke(joke: JokeDTO): void {
     jokeTitle.innerText = joke.safe_title;
 
@@ -57,6 +60,7 @@ function showJoke(joke: JokeDTO): void {
     jokeImage.alt = joke.transcript;
 }
 
+// Main function to coordinate fetching and displaying the joke
 async function main(): Promise<void> {
     try {
         const jokeId = await fetchJokeId(email);
@@ -67,4 +71,5 @@ async function main(): Promise<void> {
     }
 }
 
+// Run the main function to start the process
 main();
