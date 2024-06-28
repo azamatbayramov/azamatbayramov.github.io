@@ -25,10 +25,10 @@ interface JokeDTO {
 
 async function fetchJokeId(email: string): Promise<string> {
     const params = new URLSearchParams({ email });
-    const response = await fetch("${fetchJokeIdUrl}${params.toString()}");
+    const response = await fetch(`${fetchJokeIdUrl}${params.toString()}`);
 
     if (!response.ok) {
-        throw new Error("Failed to fetch joke id: ${response.statusText}");
+        throw new Error(`Failed to fetch joke id: ${response.statusText}`);
     }
 
     const jokeId = await response.json() as string;
@@ -37,10 +37,10 @@ async function fetchJokeId(email: string): Promise<string> {
 
 async function fetchJoke(id: string): Promise<JokeDTO> {
     const params = new URLSearchParams({ id });
-    const response = await fetch("${fetchJokeUrl}${params.toString()}");
+    const response = await fetch(`${fetchJokeUrl}${params.toString()}`);
 
     if (!response.ok) {
-        throw new Error("Failed to fetch joke: ${response.statusText}");
+        throw new Error(`Failed to fetch joke: ${response.statusText}`);
     }
 
     const joke = await response.json() as JokeDTO;
