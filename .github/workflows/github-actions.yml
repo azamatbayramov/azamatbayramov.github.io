@@ -24,11 +24,6 @@ jobs:
     - name: Build the project
       run: npm run build
     
-    - name: Copy additional files to dist
-      run: |
-        cp -a src/. dist/
-        cp -a img/ dist/
-    
     - name: Artifact the build
       uses: actions/upload-pages-artifact@v3
       with:
@@ -38,13 +33,16 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
+
     permissions:
       pages: write
       contents: write
       id-token: write
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Deploy
         id: deployment

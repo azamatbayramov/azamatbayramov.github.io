@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rollup --config rollup.config.js",
+    "build": "rollup --config rollup.config.js && cp -a src/. dist/ && cp -a img/ dist/",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
