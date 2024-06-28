@@ -2,7 +2,7 @@
   "name": "azamatbayramov.github.io",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "bundle.js",
   "scripts": {
     "build": "rollup --config rollup.config.js && cp -a src/. dist/ && cp -a img/ dist/",
     "deploy": "gh-pages -d dist"
