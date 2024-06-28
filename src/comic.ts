@@ -2,13 +2,12 @@ import { formatDistance } from "date-fns";
 
 const email = "a.bayramov@innopolis.university";
 
-const fetchJokeIdUrl: string = "https://fwd.innopolis.university/api/hw2?";
-const fetchJokeUrl: string = "https://fwd.innopolis.university/api/comic?";
+const fetchJokeIdUrl = "https://fwd.innopolis.university/api/hw2?";
+const fetchJokeUrl = "https://fwd.innopolis.university/api/comic?";
 
-const jokeTitle: HTMLElement = document.getElementById("jokeTitle") as HTMLElement;
-const jokeDate: HTMLElement = document.getElementById("jokeDate") as HTMLElement;
-const jokeImage: HTMLImageElement = document.getElementById("jokeImage") as HTMLImageElement;
-
+const jokeTitle = document.getElementById("jokeTitle") as HTMLElement;
+const jokeDate = document.getElementById("jokeDate") as HTMLElement;
+const jokeImage = document.getElementById("jokeImage") as HTMLImageElement;
 
 interface JokeDTO {
     month: string;
@@ -24,55 +23,48 @@ interface JokeDTO {
     day: string;
 }
 
-
 async function fetchJokeId(email: string): Promise<string> {
-    const params = new URLSearchParams({"email": email}) as URLSearchParams;
-    const response = await fetch(fetchJokeIdUrl + params.toString()) as Response;
+    const params = new URLSearchParams({ email });
+    const response = await fetch("${fetchJokeIdUrl}${params.toString()}");
 
     if (!response.ok) {
         throw new Error("Failed to fetch joke id: ${response.statusText}");
     }
 
-    const jokeId: string = await response.json() as string;
-
-    return jokeId as string;
+    const jokeId = await response.json() as string;
+    return jokeId;
 }
 
-
 async function fetchJoke(id: string): Promise<JokeDTO> {
-    const params = new URLSearchParams({"id": id}) as URLSearchParams;
-    const response = await fetch(fetchJokeUrl + params.toString()) as Response;
+    const params = new URLSearchParams({ id });
+    const response = await fetch("${fetchJokeUrl}${params.toString()}");
 
     if (!response.ok) {
         throw new Error("Failed to fetch joke: ${response.statusText}");
     }
 
-    const joke: JokeDTO = await response.json() as JokeDTO;
-
-    return joke as JokeDTO;
+    const joke = await response.json() as JokeDTO;
+    return joke;
 }
-
 
 function showJoke(joke: JokeDTO): void {
-    jokeTitle.innerText = joke.safe_title as string;
+    jokeTitle.innerText = joke.safe_title;
 
-    const date: Date = new Date(parseInt(joke.year), parseInt(joke.month) - 1, parseInt(joke.day)) as Date;
-    jokeDate.innerText = formatDistance(date, new Date(), { addSuffix: true }) as string;
+    const date = new Date(parseInt(joke.year), parseInt(joke.month) - 1, parseInt(joke.day));
+    jokeDate.innerText = formatDistance(date, new Date(), { addSuffix: true });
 
-    jokeImage.src = joke.img as string;
-    jokeImage.alt = joke.transcript as string;
+    jokeImage.src = joke.img;
+    jokeImage.alt = joke.transcript;
 }
-
 
 async function main(): Promise<void> {
     try {
-        const jokeId: string = await fetchJokeId(email) as string;
-        const joke: JokeDTO = await fetchJoke(jokeId) as JokeDTO;
+        const jokeId = await fetchJokeId(email);
+        const joke = await fetchJoke(jokeId);
         showJoke(joke);
     } catch (error) {
-        console.error("Error:", error)
+        console.error("Error:", error);
     }
 }
 
-
-main()
+main();
