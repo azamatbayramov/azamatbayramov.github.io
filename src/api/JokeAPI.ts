@@ -1,5 +1,3 @@
-const email = "a.bayramov@innopolis.university";
-
 const fetchJokeIdUrl = "https://fwd.innopolis.university/api/hw2?";
 const fetchJokeUrl = "https://fwd.innopolis.university/api/comic?";
 
