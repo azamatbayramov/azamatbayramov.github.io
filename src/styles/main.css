@@ -1,0 +1,10 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    --color1: #222831;
+    --color2: #393E46;
+    --color3: #009e32;
+    --color4: #EEEEEE;
+
+    margin: 0;
+}
