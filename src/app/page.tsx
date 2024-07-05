@@ -1,10 +1,21 @@
 import React from 'react';
-import MainPage from '../components/MainPage/MainPage';
+import Profile from '../components/Profile/Profile';
+import AboutMe from '../components/AboutMe/AboutMe';
+import Skills from '../components/Skills/Skills';
+import Education from '../components/Education/Education';
+import Contacts from '../components/Contacts/Contacts';
+import styles from './page.module.css'
 
 
 const Page = () => {
     return (
-        <MainPage/>
+        <main className={styles.main_page_main}>
+            <Profile />
+            <AboutMe />
+            <Skills />
+            <Education />
+            <Contacts />
+        </main>
     );
 };
 
