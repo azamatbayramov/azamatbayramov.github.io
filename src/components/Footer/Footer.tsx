@@ -1,25 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
-
-
-const FooterContainer = styled.footer`
-  background-color: var(--color2);
-  color: var(--color4);
-  
-  text-align: center;
-  padding: 1em 0;
-`
-
-const FooterText = styled.p`
-  margin: 0;
-`
+import styles from './Footer.module.css';
 
 
 const Footer: React.FC = () => {
   return (
-    <FooterContainer>
-      <FooterText>&copy; 2024 Azamat Bayramov</FooterText>
-    </FooterContainer>
+    <footer className={styles.footer_container}>
+      <p className={styles.footer_text}>&copy; 2024 Azamat Bayramov</p>
+    </footer>
   );
 };
 

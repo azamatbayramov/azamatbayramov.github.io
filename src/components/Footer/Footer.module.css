@@ -1,0 +1,11 @@
+.footer_container {
+    background-color: var(--color2);
+    color: var(--color4);
+
+    text-align: center;
+    padding: 1em 0;
+}
+
+.footer_text {
+    margin: 0;
+}
