@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './Contacts.module.css'
-import section_styles from '../../styles/section.css'
+
 
 const Contacts: React.FC = () => {
   return (
-    <section id="contacts" className={section_styles.section_container}>
+    <section id="contacts">
       <h2>Contacts</h2>
       <div className={styles.contacts_container}>
         <a href="https://t.me/azamatbayramov" id="tg-link">
@@ -20,5 +20,6 @@ const Contacts: React.FC = () => {
     </section>
   );
 };
+
 
 export default Contacts;

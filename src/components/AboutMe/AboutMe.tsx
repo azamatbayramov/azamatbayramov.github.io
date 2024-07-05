@@ -1,9 +1,8 @@
 import React from 'react';
-import styles from '../../styles/section.css'
 
 const AboutMe: React.FC = () => {
   return (
-    <section id="about-me" className={styles.section_container}>
+    <section id="about-me">
         <h2>About Me</h2>
         <p>
             Hello! I am a Azamat Bayramov. I am from Russia, Ufa. Currently, I am studying at Innopolis University and working as a Python Backend Developer at an outsourcing company. Also, in my free time, I like to photograph, play the guitar and learn new technologies. I try to follow healthy lifestyle, so I go to the swimming pool.

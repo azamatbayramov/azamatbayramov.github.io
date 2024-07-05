@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Skills.module.css'
-import section_styles from '../../styles/section.css'
 
 
 const skills = [
@@ -13,7 +12,7 @@ const skills = [
 
 const Skills: React.FC = () => {
   return (
-    <section id="skills" className={section_styles.section_container}>
+    <section id="skills">
       <h2>Skills</h2>
       <ul className={styles.skills_list}>
         {skills.map(skill => (
