@@ -1,8 +1,10 @@
+'use client';
+
 import React from 'react';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 import { formatDistance } from "date-fns";
-import { JokeDTO, getJokeByEmail } from '../api/JokeAPI';
+import { JokeDTO, getJokeByEmail } from '../../api/JokeAPI';
 
 const JokePageContainer = styled.div`
   display: flex;
