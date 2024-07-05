@@ -4,6 +4,8 @@
 
     text-align: center;
     padding: 1em 0;
+
+    flex-shrink: 1;
 }
 
 .footer_text {

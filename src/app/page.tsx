@@ -9,13 +9,13 @@ import styles from './page.module.css'
 
 const Page = () => {
     return (
-        <main className={styles.main_page_main}>
+        <div className={styles.main_page_main}>
             <Profile />
             <AboutMe />
             <Skills />
             <Education />
             <Contacts />
-        </main>
+        </div>
     );
 };
 
