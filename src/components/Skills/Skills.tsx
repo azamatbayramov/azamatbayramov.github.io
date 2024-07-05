@@ -1,31 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Section } from '../Common/Section';
-
-
-const SkillsList = styled.ul`
-  list-style: none;
-  padding: 0;
-
-  display: flex;
-  flex-flow: row wrap;
-
-  gap: 0.5em;
-  margin: 0;
-`
-
-const Skill = styled.li`
-  background-color: var(--color3);
-  color: var(--color4);
-
-  padding: 0.5em 1em;
-  border-radius: 5px;
-  transition: transform 0.5s;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-`
+import styles from './Skills.module.css'
+import section_styles from '../../styles/section.css'
 
 
 const skills = [
@@ -35,17 +10,19 @@ const skills = [
   'Prometheus', 'Grafana', 'HTML', 'CSS'
 ];
 
+
 const Skills: React.FC = () => {
   return (
-    <Section id="skills">
+    <section id="skills" className={section_styles.section_container}>
       <h2>Skills</h2>
-      <SkillsList>
+      <ul className={styles.skills_list}>
         {skills.map(skill => (
-          <Skill key={skill}>{skill}</Skill>
+          <li key={skill} className={styles.skill}>{skill}</li>
         ))}
-      </SkillsList>
-    </Section>
+      </ul>
+    </section>
   );
 };
+
 
 export default Skills;
