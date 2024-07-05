@@ -1,5 +1,5 @@
 import React from 'react';
-import { getJokeByEmail } from '../../api/JokeAPI';
+import { getJokeByEmail } from '../../utils/JokeAPI';
 import { formatDistance } from 'date-fns';
 import styles from './page.module.css';
 
