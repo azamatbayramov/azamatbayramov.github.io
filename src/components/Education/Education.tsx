@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Section } from '../Common/Section';
+import styles from './Education.module.css'
+import section_styles from '../../styles/section.css'
 
 
 const education = [
@@ -22,39 +22,20 @@ const education = [
 ];
 
 
-const EducationList = styled.ul`
-  list-style: none;
-  padding: 0;
-
-  display: flex;
-  flex-direction: column;
-  gap: 1.5em;
-`
-
-const EducationItem = styled.li`
-  display: flex;
-  flex-direction: column;
-  gap: 0.4em;
-`
-
-const EducationInfo = styled.p`
-  font-style: italic;
-`
-
 const Education: React.FC = () => {
   return (
-    <Section id="education">
+    <section id="education" className={section_styles.section_container}>
       <h2>Education</h2>
-      <EducationList>
+      <ul className={styles.education_list}>
         {education.map((edu, index) => (
-          <EducationItem key={index}>
+          <li key={index} className={styles.education_item}>
             <h3>{edu.institution}</h3>
-            <EducationInfo>{edu.degree}</EducationInfo>
-            <EducationInfo>{edu.period}</EducationInfo>
-          </EducationItem>
+            <p className={styles.education_info}>{edu.degree}</p>
+            <p className={styles.education_info}>{edu.period}</p>
+          </li>
         ))}
-      </EducationList>
-    </Section>
+      </ul>
+    </section>
   );
 };
 
