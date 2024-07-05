@@ -1,0 +1,16 @@
+.contacts_container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 2em;
+}
+
+.contact_icon {
+    width: 3em;
+    transition: transform 0.5s;
+    margin: 0;
+}
+
+.contact_icon:hover {
+    transform: scale(1.2);
+}

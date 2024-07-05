@@ -1,42 +1,23 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Section } from '../Common/Section';
-
-
-const ContactsBlock = styled.div`
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  gap: 2em;
-`
-
-const ContactIcon = styled.img`
-  width: 3em;
-  transition: transform 0.5s;
-  margin: 0;
-
-  &:hover {
-    transform: scale(1.2);
-  }
-`
-
+import styles from './Contacts.module.css'
+import section_styles from '../../styles/section.css'
 
 const Contacts: React.FC = () => {
   return (
-    <Section id="contacts">
+    <section id="contacts" className={section_styles.section_container}>
       <h2>Contacts</h2>
-      <ContactsBlock>
+      <div className={styles.contacts_container}>
         <a href="https://t.me/azamatbayramov" id="tg-link">
-          <ContactIcon src="img/telegram.svg" alt="Telegram Logo" />
+          <img src="img/telegram.svg" alt="Telegram Logo" className={styles.contact_icon}/>
         </a>
         <a href="https://github.com/azamatbayramov" id="gh-link">
-          <ContactIcon src="img/github.svg" alt="GitHub Logo" />
+          <img src="img/github.svg" alt="GitHub Logo" className={styles.contact_icon}/>
         </a>
         <a href="mailto:bayramov.azamat04@gmail.com" id="email">
-          <ContactIcon src="img/email.svg" alt="Email Logo" />
+          <img src="img/email.svg" alt="Email Logo" className={styles.contact_icon}/>
         </a>
-      </ContactsBlock>
-    </Section>
+      </div>
+    </section>
   );
 };
 
