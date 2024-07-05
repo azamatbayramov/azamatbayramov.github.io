@@ -9,7 +9,7 @@ import styles from './page.module.css'
 
 const Page = () => {
     return (
-        <div className={styles.main_page_main}>
+        <div className={styles.main_page_container}>
             <Profile />
             <AboutMe />
             <Skills />
