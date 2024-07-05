@@ -29,7 +29,6 @@ const MainPageMain = styled.main`
 const MainPage: React.FC = () => {
     return (
       <MainPageContainer>
-        <Header />
         <MainPageMain>
           <Profile />
           <AboutMe />
@@ -37,7 +36,6 @@ const MainPage: React.FC = () => {
           <Education />
           <Contacts />
         </MainPageMain>
-        <Footer />
       </MainPageContainer>
     );
 };
