@@ -30,18 +30,21 @@
     "plugins": [
       {
         "name": "next"
-      },
+      }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
   "include": [
     "src",
     ".next/types/**/*.ts",
     "./next-env.d.ts",
-    "**/*.ts", 
-    "**/*.tsx"
+    "**/*.ts",
+    "**/*.tsx",
+    "dist/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
