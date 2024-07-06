@@ -30,13 +30,7 @@ jobs:
 
     - name: Build the project
       run: npm run build
-    
-    - name: Copy routing fixing files
-      run: cp dist/index.html dist/404.html
-    
-    - name: Copy images
-      run: cp -r img dist/img
-    
+
     - name: Artifact the build
       uses: actions/upload-pages-artifact@v3
       with:
