@@ -29,9 +29,9 @@ jobs:
       run: npm run check
 
     - name: Setup Pages
-        uses: actions/configure-pages@v4
-        with:
-          static_site_generator: next
+      uses: actions/configure-pages@v4
+      with:
+        static_site_generator: next
 
     - name: Build the project
       run: npm run build
