@@ -3,7 +3,10 @@
 const nextConfig = {
     output: "export",
     distDir: 'dist',
-    reactStrictMode: true
+    reactStrictMode: true,
+    images: {
+        unoptimized: true,
+    },
 };
 
 export default nextConfig;
