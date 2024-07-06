@@ -2,6 +2,7 @@ import React from 'react';
 import { getJokeByEmail } from '../../utils/JokeAPI';
 import { formatDistance } from 'date-fns';
 import styles from './page.module.css';
+import Image from 'next/image';
 
 
 export default async function Page() {
@@ -17,7 +18,7 @@ export default async function Page() {
                     { addSuffix: true }
                 )
             }</p>
-            <img id="jokeImage" src={joke.img} alt={joke.transcript} />
+            <Image id="jokeImage" src={joke.img} alt={joke.transcript} />
             <a href="/" className={styles.back_button}>Back to the main page</a>
         </div>
     );
