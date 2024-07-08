@@ -10,7 +10,8 @@
         "lint": "next lint",
         "check": "tsc --noEmit",
         "format": "npx prettier . --write",
-        "format_check": "npx prettier . --check"
+        "format_check": "npx prettier . --check",
+        "prepare": "husky"
     },
     "repository": {
         "type": "git",
@@ -35,6 +36,8 @@
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-react-hooks": "^4.6.2",
         "eslint-plugin-react-refresh": "^0.4.7",
+        "husky": "^9.0.11",
+        "lint-staged": "^15.2.7",
         "prettier": "3.3.2",
         "tslib": "^2.6.3",
         "typescript": "^5.5.2",
@@ -47,5 +50,11 @@
         "react-dom": "^18.3.1",
         "react-router-dom": "^6.4.0"
     },
-    "type": "module"
+    "type": "module",
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx}": [
+            "eslint --cache --cache-location .next/cache/eslint/ --fix",
+            "npm run format"
+        ]
+    }
 }
