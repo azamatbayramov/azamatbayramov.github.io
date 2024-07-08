@@ -21,6 +21,14 @@ export default function RootLayout({
                     type="image/x-icon"
                     href="img/favicon.ico"
                 />
+                <meta
+                    name="author"
+                    content="Azamat Bayramov"
+                />
+                <meta
+                    name="description"
+                    content="Personal website of Azamat Bayramov - Python Backend Developer"
+                />
             </head>
             <body>
                 <Header />
