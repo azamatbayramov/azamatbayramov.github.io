@@ -23,7 +23,7 @@ async function fetchJokeId(email: string): Promise<string> {
         throw new Error(`Failed to fetch joke id: ${response.statusText}`);
     }
 
-    const jokeId = await response.json() as string;
+    const jokeId = (await response.json()) as string;
     return jokeId;
 }
 
@@ -35,7 +35,7 @@ async function fetchJoke(id: string): Promise<JokeDTO> {
         throw new Error(`Failed to fetch joke: ${response.statusText}`);
     }
 
-    const joke = await response.json() as JokeDTO;
+    const joke = (await response.json()) as JokeDTO;
     return joke;
 }
 

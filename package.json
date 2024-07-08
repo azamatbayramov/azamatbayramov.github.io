@@ -1,47 +1,51 @@
 {
-  "name": "azamatbayramov.github.io",
-  "version": "1.0.0",
-  "description": "",
-  "main": "bundle.js",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "check": "tsc --noEmit"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/azamatbayramov/azamatbayramov.github.io.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/azamatbayramov/azamatbayramov.github.io/issues"
-  },
-  "homepage": "azamatbayramov.github.io",
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.13.1",
-    "@typescript-eslint/parser": "^7.13.1",
-    "@vitejs/plugin-react": "^4.3.1",
-    "eslint": "^8.57.0",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-react-refresh": "^0.4.7",
-    "eslint-config-next": "14.2.4",
-    "tslib": "^2.6.3",
-    "typescript": "^5.5.2",
-    "vite": "^5.3.1"
-  },
-  "dependencies": {
-    "date-fns": "^3.6.0",
-    "next": "^14.2.4",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.4.0"
-  },
-  "type": "module"
+    "name": "azamatbayramov.github.io",
+    "version": "1.0.0",
+    "description": "",
+    "main": "bundle.js",
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "check": "tsc --noEmit",
+        "format": "npx prettier . --write",
+        "format_check": "npx prettier . --check"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/azamatbayramov/azamatbayramov.github.io.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/azamatbayramov/azamatbayramov.github.io/issues"
+    },
+    "homepage": "azamatbayramov.github.io",
+    "devDependencies": {
+        "@types/node": "^20",
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
+        "@typescript-eslint/eslint-plugin": "^7.13.1",
+        "@typescript-eslint/parser": "^7.13.1",
+        "@vitejs/plugin-react": "^4.3.1",
+        "eslint": "^8.57.0",
+        "eslint-config-next": "14.2.4",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-react-hooks": "^4.6.2",
+        "eslint-plugin-react-refresh": "^0.4.7",
+        "prettier": "3.3.2",
+        "tslib": "^2.6.3",
+        "typescript": "^5.5.2",
+        "vite": "^5.3.1"
+    },
+    "dependencies": {
+        "date-fns": "^3.6.0",
+        "next": "^14.2.4",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-router-dom": "^6.4.0"
+    },
+    "type": "module"
 }
