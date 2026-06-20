@@ -1,8 +1,555 @@
-.main_page_container {
+.pageShell {
+    min-height: 100vh;
+    color: #10203f;
+    background:
+        radial-gradient(circle at 10% 8%, rgba(31, 126, 255, 0.22), transparent 30rem),
+        radial-gradient(circle at 90% 14%, rgba(138, 92, 255, 0.22), transparent 30rem),
+        linear-gradient(145deg, #f9fcff, #edf6ff 48%, #f7f2ff);
+    position: relative;
+    overflow: hidden;
+}
+
+.ambientOne,
+.ambientTwo {
+    position: fixed;
+    z-index: 0;
+    pointer-events: none;
+    border-radius: 999px;
+    filter: blur(12px);
+}
+
+.ambientOne {
+    width: 28rem;
+    height: 28rem;
+    right: -9rem;
+    top: 6rem;
+    background: rgba(66, 146, 255, 0.24);
+}
+
+.ambientTwo {
+    width: 22rem;
+    height: 22rem;
+    left: -8rem;
+    bottom: 12rem;
+    background: rgba(162, 112, 255, 0.18);
+}
+
+.navbar,
+.content {
+    position: relative;
+    z-index: 1;
+    width: min(1180px, calc(100% - 2rem));
+    margin-inline: auto;
+}
+
+.navbar {
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 1.4rem;
+    background: rgba(255, 255, 255, 0.52);
+    box-shadow: 0 1.5rem 4rem rgba(44, 95, 171, 0.13);
+    backdrop-filter: blur(22px) saturate(155%);
+}
+
+.brand,
+.navCta,
+.navLinks a,
+.primaryButton,
+.secondaryButton,
+.sectionHeader a,
+.contactGrid a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-weight: 850;
+}
+
+.brandOrb {
+    width: 1.35rem;
+    height: 1.35rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1397ff, #665cff, #b37dff);
+    box-shadow: 0 0.75rem 1.8rem rgba(19, 118, 255, 0.32);
+}
+
+.navLinks {
+    display: flex;
+    gap: 1.4rem;
+    color: #52617f;
+    font-size: 0.92rem;
+    font-weight: 650;
+}
+
+.navCta,
+.secondaryButton {
+    padding: 0.72rem 1rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.68);
+    border: 1px solid rgba(255, 255, 255, 0.86);
+}
+
+.navCta,
+.heroMeta a,
+.sectionHeader a {
+    color: #0f61ff;
+    font-weight: 850;
+}
+
+.content {
+    margin-block: 2rem;
     display: flex;
     flex-direction: column;
+    gap: 1.25rem;
+}
 
-    gap: 2.5em;
+.hero,
+.sectionBlock,
+.contactBlock,
+.statCard,
+.experienceCard,
+.skillCard,
+.projectCard,
+.educationCard,
+.contactGrid a {
+    border: 1px solid rgba(255, 255, 255, 0.74);
+    background: rgba(255, 255, 255, 0.54);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 1.5rem 4rem rgba(39, 94, 168, 0.11);
+    backdrop-filter: blur(20px) saturate(150%);
+}
 
-    padding: 2em 10%;
+.hero {
+    min-height: 34rem;
+    padding: clamp(1.5rem, 4vw, 4rem);
+    border-radius: 2.1rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(20rem, 0.75fr);
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4rem);
+}
+
+.heroCopy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.55rem 0.85rem;
+    border-radius: 999px;
+    color: #1769ff;
+    font-size: 0.88rem;
+    font-weight: 850;
+    background: rgba(255, 255, 255, 0.66);
+}
+
+.eyebrow span {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: #1687ff;
+}
+
+.hero h1 {
+    margin: 0;
+    max-width: 42rem;
+    color: #101a35;
+    font-size: clamp(3.4rem, 8vw, 6.7rem);
+    line-height: 0.9;
+    letter-spacing: -0.08em;
+}
+
+.hero h1 strong {
+    display: block;
+    margin-top: 0.35rem;
+    color: transparent;
+    background: linear-gradient(90deg, #1594ff, #3d7cff 45%, #8b62ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.heroText,
+.contactBlock p,
+.projectCard p,
+.experienceCard li,
+.educationCard small {
+    color: #52617a;
+    line-height: 1.65;
+}
+
+.heroText {
+    max-width: 36rem;
+    font-size: 1.08rem;
+}
+
+.heroMeta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    color: #34435f;
+    font-weight: 650;
+}
+
+.heroActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+}
+
+.primaryButton,
+.secondaryButton {
+    display: inline-flex;
+    align-items: center;
+    min-height: 3.2rem;
+    padding-inline: 1.25rem;
+    border-radius: 1rem;
+    font-weight: 850;
+}
+
+.primaryButton {
+    color: white;
+    background: linear-gradient(135deg, #0a6cff, #55a7ff);
+    box-shadow: 0 1rem 2.4rem rgba(22, 109, 255, 0.28);
+}
+
+.primaryButton span {
+    margin-left: 0.8rem;
+}
+
+.statsGrid,
+.experienceGrid,
+.skillsGrid,
+.projectsGrid,
+.educationGrid,
+.contactGrid {
+    display: grid;
+    gap: 1rem;
+}
+
+.statsGrid {
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.statCard,
+.experienceCard,
+.skillCard,
+.projectCard,
+.educationCard,
+.contactGrid a {
+    border-radius: 1.25rem;
+    padding: 1.15rem;
+}
+
+.statCard span {
+    display: block;
+    color: #142345;
+    font-weight: 950;
+}
+
+.statCard p {
+    margin: 0.35rem 0 0;
+    color: #66728a;
+    font-size: 0.84rem;
+}
+
+.portraitCard {
+    min-height: 31rem;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1.2rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.65), rgba(106, 153, 255, 0.18));
+    box-shadow: 0 2rem 5rem rgba(35, 93, 181, 0.18);
+}
+
+.portraitCard img {
+    width: min(100%, 25rem);
+    max-height: 30rem;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 1.5rem;
+}
+
+.statusDot {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background: #30d47d;
+    box-shadow: 0 0 0 0.45rem rgba(48, 212, 125, 0.16);
+}
+
+.profileBadge {
+    position: absolute;
+    right: 1.6rem;
+    bottom: 1.6rem;
+    padding: 0.9rem 1rem;
+    border-radius: 1rem;
+    color: white;
+    background: rgba(12, 26, 54, 0.58);
+    backdrop-filter: blur(18px);
+}
+
+.profileBadge strong,
+.profileBadge span {
+    display: block;
+}
+
+.profileBadge span {
+    margin-top: 0.2rem;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.sectionBlock,
+.contactBlock {
+    border-radius: 1.7rem;
+    padding: clamp(1.25rem, 3vw, 2.2rem);
+}
+
+.sectionHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.sectionHeader h2,
+.contactBlock h2 {
+    margin: 0;
+    color: #122244;
+    font-size: clamp(1.35rem, 3vw, 1.9rem);
+    letter-spacing: -0.04em;
+}
+
+.sectionHeader span {
+    color: #63718b;
+    font-weight: 650;
+}
+
+.experienceGrid,
+.projectsGrid,
+.contactGrid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.skillsGrid {
+    grid-template-columns: 0.8fr 1.35fr 1.15fr;
+}
+
+.cardTopline {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.9rem;
+    align-items: center;
+}
+
+.cardTopline time {
+    grid-column: 1 / -1;
+    color: #69758c;
+    font-size: 0.84rem;
+    font-weight: 750;
+}
+
+.companyMark,
+.educationMark,
+.projectIcon,
+.contactGrid span {
+    display: grid;
+    place-items: center;
+    border-radius: 1rem;
+    color: white;
+    font-weight: 950;
+    background: linear-gradient(135deg, #1477ff, #8b6bff);
+}
+
+.companyMark,
+.contactGrid span {
+    width: 3rem;
+    height: 3rem;
+}
+
+.experienceCard h3,
+.skillCard h3,
+.projectCard h3,
+.educationCard h3 {
+    margin: 0;
+    color: #172747;
+}
+
+.experienceCard p,
+.educationCard p {
+    margin: 0.2rem 0 0;
+    color: #1769ff;
+    font-weight: 850;
+}
+
+.experienceCard ul {
+    padding-left: 1rem;
+    margin: 1rem 0 0;
+}
+
+.skillChips,
+.projectTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1rem;
+}
+
+.skillChips span,
+.projectTags span {
+    padding: 0.58rem 0.78rem;
+    border-radius: 0.75rem;
+    color: #34425f;
+    font-size: 0.88rem;
+    font-weight: 850;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.projectCard {
+    display: flex;
+    flex-direction: column;
+    min-height: 14rem;
+}
+
+.projectIcon {
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1.1rem;
+}
+
+.projectTags {
+    margin-top: auto;
+}
+
+.educationGrid {
+    grid-template-columns: 1.25fr 1fr;
+}
+
+.educationCard {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    align-items: center;
+}
+
+.educationMark {
+    width: 3.8rem;
+    height: 3.8rem;
+    font-size: 1.3rem;
+}
+
+.educationCard small {
+    display: block;
+    margin-top: 0.45rem;
+}
+
+.educationMeta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+    color: #65718b;
+    font-weight: 750;
+}
+
+.educationMeta span {
+    padding: 0.45rem 0.65rem;
+    border-radius: 999px;
+    color: #08754f;
+    background: rgba(68, 216, 151, 0.16);
+}
+
+.contactBlock {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.contactGrid a {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 0.8rem;
+}
+
+.contactGrid span {
+    grid-row: span 2;
+}
+
+.contactGrid small {
+    color: #65718b;
+    font-weight: 650;
+}
+
+@media (max-width: 980px) {
+    .navbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .navLinks {
+        flex-wrap: wrap;
+        gap: 0.9rem;
+    }
+
+    .hero,
+    .contactBlock {
+        grid-template-columns: 1fr;
+    }
+
+    .statsGrid,
+    .experienceGrid,
+    .skillsGrid,
+    .projectsGrid,
+    .educationGrid,
+    .contactGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .hero h1 {
+        font-size: 3.2rem;
+    }
+
+    .statsGrid,
+    .experienceGrid,
+    .skillsGrid,
+    .projectsGrid,
+    .educationGrid,
+    .contactGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .educationCard {
+        grid-template-columns: auto 1fr;
+    }
+
+    .educationMeta {
+        grid-column: 1 / -1;
+        align-items: flex-start;
+    }
 }
