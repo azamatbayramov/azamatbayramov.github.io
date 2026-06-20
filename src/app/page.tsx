@@ -46,7 +46,7 @@ const experience = [
 ];
 
 const skillGroups = [
-    ["Languages", ["Go", "Python", "SQL", "TypeScript"]],
+    ["Languages", ["Go", "Python", "SQL"]],
     [
         "Backend",
         [
@@ -76,27 +76,6 @@ const skillGroups = [
     ],
 ] as const;
 
-const projects = [
-    {
-        title: "Random Coffee System",
-        description:
-            "A modular matching platform for coffee chats with algorithms and experiment support.",
-        tags: ["Python", "FastAPI", "PostgreSQL", "Experiments"],
-    },
-    {
-        title: "Shortly",
-        description:
-            "A reliable URL shortener built in Go with clean architecture and efficient storage.",
-        tags: ["Go", "PostgreSQL", "REST API", "Docker"],
-    },
-    {
-        title: "Mood Diary",
-        description:
-            "A personal productivity and mood tracking app for reflection and analytics.",
-        tags: ["Python", "FastAPI", "Charts", "CI"],
-    },
-];
-
 const stats = [
     ["3+", "years experience"],
     ["Go + Python", "primary stack"],
@@ -118,7 +97,6 @@ export default function Page() {
                 <div className={styles.navLinks}>
                     <a href="#experience">Experience</a>
                     <a href="#skills">Skills</a>
-                    <a href="#projects">Projects</a>
                     <a href="#education">Education</a>
                     <a href="#contact">Contact</a>
                 </div>
@@ -147,8 +125,8 @@ export default function Page() {
                             Go Developer at <a href="#experience">Ozon Bank</a>
                         </p>
                         <div className={styles.heroActions}>
-                            <a className={styles.primaryButton} href="#projects">
-                                View projects <span>→</span>
+                            <a className={styles.primaryButton} href="#experience">
+                                View experience <span>→</span>
                             </a>
                             <a className={styles.secondaryButton} href="#contact">
                                 Contact me
@@ -165,18 +143,19 @@ export default function Page() {
                     </div>
 
                     <div className={styles.portraitCard}>
-                        <div className={styles.statusDot} />
                         <Image
-                            src="/img/my_photo.jpg"
-                            width={420}
-                            height={520}
+                            src="/img/azamat-liquid-glass.svg"
+                            width={320}
+                            height={430}
                             alt="Azamat Bayramov"
                             priority
+                            unoptimized
+                            style={{
+                                width: "min(100%, 23.5rem)",
+                                height: "auto",
+                                objectFit: "contain",
+                            }}
                         />
-                        <div className={styles.profileBadge}>
-                            <strong>Azamat Bayramov</strong>
-                            <span>Backend Engineer</span>
-                        </div>
                     </div>
                 </section>
 
@@ -241,29 +220,6 @@ export default function Page() {
                     </div>
                 </section>
 
-                <section id="projects" className={styles.sectionBlock}>
-                    <div className={styles.sectionHeader}>
-                        <h2>Projects</h2>
-                        <a href="https://github.com/azamatbayramov" target="_blank" rel="noreferrer">
-                            See all on GitHub →
-                        </a>
-                    </div>
-                    <div className={styles.projectsGrid}>
-                        {projects.map((project) => (
-                            <article className={styles.projectCard} key={project.title}>
-                                <span className={styles.projectIcon}>⌘</span>
-                                <h3>{project.title}</h3>
-                                <p>{project.description}</p>
-                                <div className={styles.projectTags}>
-                                    {project.tags.map((tag) => (
-                                        <span key={tag}>{tag}</span>
-                                    ))}
-                                </div>
-                            </article>
-                        ))}
-                    </div>
-                </section>
-
                 <section id="education" className={styles.sectionBlock}>
                     <div className={styles.sectionHeader}>
                         <h2>Education</h2>
@@ -301,6 +257,7 @@ export default function Page() {
                                 <span>GPA 4.78/5.0</span>
                             </div>
                         </article>
+
                         <article className={styles.educationCard}>
                             <span
                                 className={styles.educationMark}
