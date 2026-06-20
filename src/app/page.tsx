@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./page.module.css";
 
 const experience = [
@@ -157,7 +158,13 @@ export default function Page() {
 
                     <div className={styles.portraitCard}>
                         <div className={styles.statusDot} />
-                        <img src="/img/my_photo.jpg" alt="Azamat Bayramov" />
+                        <Image
+                            src="/img/my_photo.jpg"
+                            width={420}
+                            height={520}
+                            alt="Azamat Bayramov"
+                            priority
+                        />
                         <div className={styles.profileBadge}>
                             <strong>Azamat Bayramov</strong>
                             <span>Backend Engineer</span>
