@@ -6,7 +6,7 @@ const logoTileBackground = "rgba(255, 255, 255, 0.86)";
 const experience = [
     {
         company: "Ozon Bank",
-        role: "Go Developer",
+        role: "Go Backend Developer",
         period: "Mar 2025 – Present",
         logo: "/img/logos/ozon-bank.svg",
         logoSize: "2.35rem",
@@ -122,7 +122,7 @@ export default function Page() {
                         <p className={styles.heroMeta}>
                             Student at <a href="#education">Innopolis University</a>
                             <span>•</span>
-                            Go Developer at <a href="#experience">Ozon Bank</a>
+                            Go Backend Developer at <a href="#experience">Ozon Bank</a>
                         </p>
                         <div className={styles.heroActions}>
                             <a className={styles.primaryButton} href="#experience">
