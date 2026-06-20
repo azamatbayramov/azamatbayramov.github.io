@@ -302,7 +302,23 @@ export default function Page() {
                             </div>
                         </article>
                         <article className={styles.educationCard}>
-                            <span className={styles.educationMark}>Y</span>
+                            <span
+                                className={styles.educationMark}
+                                style={{ background: logoTileBackground }}
+                            >
+                                <Image
+                                    src="/img/logos/yandex-lyceum.svg"
+                                    width={44}
+                                    height={44}
+                                    alt="Yandex Lyceum logo"
+                                    unoptimized
+                                    style={{
+                                        width: "2.35rem",
+                                        height: "2.35rem",
+                                        objectFit: "contain",
+                                    }}
+                                />
+                            </span>
                             <div>
                                 <h3>Yandex Lyceum</h3>
                                 <p>Programming foundations</p>
