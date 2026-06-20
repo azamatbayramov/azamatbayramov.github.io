@@ -1,12 +1,16 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
+const logoTileBackground = "rgba(255, 255, 255, 0.86)";
+
 const experience = [
     {
         company: "Ozon Bank",
         role: "Go Developer",
         period: "Mar 2025 – Present",
-        mark: "OZON",
+        logo: "/img/logos/ozon-bank.svg",
+        logoSize: "2.35rem",
+        logoBackground: logoTileBackground,
         bullets: [
             "Backend services for banking platform features",
             "GraphQL federation, integrations, and production support",
@@ -17,7 +21,9 @@ const experience = [
         company: "MIDA",
         role: "Python Backend Developer",
         period: "Aug 2023 – Feb 2025",
-        mark: "M",
+        logo: "/img/logos/mida.svg",
+        logoSize: "1.85rem",
+        logoBackground: logoTileBackground,
         bullets: [
             "Educational platform backend and subscription logic",
             "Payments, billing integrations, and admin tools",
@@ -28,7 +34,9 @@ const experience = [
         company: "Along",
         role: "Python Backend Developer",
         period: "Mar 2024 – Aug 2024",
-        mark: "A",
+        logo: "/img/logos/along.svg",
+        logoSize: "2.05rem",
+        logoBackground: logoTileBackground,
         bullets: [
             "FastAPI services and database design",
             "Microservice architecture and integrations",
@@ -181,7 +189,23 @@ export default function Page() {
                         {experience.map((item) => (
                             <article className={styles.experienceCard} key={item.company}>
                                 <div className={styles.cardTopline}>
-                                    <span className={styles.companyMark}>{item.mark}</span>
+                                    <span
+                                        className={styles.companyMark}
+                                        style={{ background: item.logoBackground }}
+                                    >
+                                        <Image
+                                            src={item.logo}
+                                            width={44}
+                                            height={44}
+                                            alt={`${item.company} logo`}
+                                            unoptimized
+                                            style={{
+                                                width: item.logoSize,
+                                                height: item.logoSize,
+                                                objectFit: "contain",
+                                            }}
+                                        />
+                                    </span>
                                     <div>
                                         <h3>{item.company}</h3>
                                         <p>{item.role}</p>
@@ -247,7 +271,23 @@ export default function Page() {
                     </div>
                     <div className={styles.educationGrid}>
                         <article className={styles.educationCard}>
-                            <span className={styles.educationMark}>IN</span>
+                            <span
+                                className={styles.educationMark}
+                                style={{ background: logoTileBackground }}
+                            >
+                                <Image
+                                    src="/img/logos/innopolis.svg"
+                                    width={44}
+                                    height={44}
+                                    alt="Innopolis University logo"
+                                    unoptimized
+                                    style={{
+                                        width: "2.3rem",
+                                        height: "2.3rem",
+                                        objectFit: "contain",
+                                    }}
+                                />
+                            </span>
                             <div>
                                 <h3>Innopolis University</h3>
                                 <p>BSc in Software Development</p>
