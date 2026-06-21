@@ -144,7 +144,7 @@ export default function Page() {
 
                     <div className={styles.portraitCard}>
                         <Image
-                            src="/img/azamat-liquid-glass.svg"
+                            src="/img/my_photo.jpg"
                             width={320}
                             height={430}
                             alt="Azamat Bayramov"
