@@ -112,8 +112,9 @@ export default function Page() {
                             <span /> Backend engineer crafting scalable systems
                         </span>
                         <h1>
-                            Backend Engineer
-                            <strong>Go / Python</strong>
+                            Go
+                            <strong>Backend</strong>
+                            <strong>Engineer</strong>
                         </h1>
                         <p className={styles.heroText}>
                             I build reliable backend systems, integrations, and
