@@ -1,40 +1,17 @@
-import Footer from "../components/Footer/Footer";
-import Header from "../components/Header/Header";
+import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import "./global.css";
 
-export default function RootLayout({
-    children,
-}: {
-    children: React.ReactNode;
-}) {
+export const metadata: Metadata = {
+    title: "Azamat Bayramov | Backend Engineer",
+    description:
+        "Portfolio of Azamat Bayramov: Go, Python, backend systems, integrations, and product engineering.",
+};
+
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
     return (
         <html lang="en">
-            <head>
-                <meta charSet="UTF-8" />
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1.0"
-                />
-                <title>Azamat Bayramov</title>
-                <link
-                    rel="shortcut icon"
-                    type="image/x-icon"
-                    href="img/favicon.ico"
-                />
-                <meta
-                    name="author"
-                    content="Azamat Bayramov"
-                />
-                <meta
-                    name="description"
-                    content="Personal website of Azamat Bayramov - Python Backend Developer"
-                />
-            </head>
-            <body>
-                <Header />
-                <main>{children}</main>
-                <Footer />
-            </body>
+            <body>{children}</body>
         </html>
     );
 }
